@@ -60,10 +60,10 @@ def main():
     args = parser.parse_args()
 
     global allowed_origin
-    allowed_origin = a.origin
+    allowed_origin = args.origin
 
     print('serving at http://%s:%d' % (args.addr, args.port))
-    ThreadedHTTPServer((a.addr, a.port), Handler).serve_forever()
+    ThreadedHTTPServer((args.addr, args.port), Handler).serve_forever()
 
 
 main()
